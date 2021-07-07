@@ -44,10 +44,15 @@ Open ranges at the start or end are represented by a `null` value for the start/
 
 === Schema
 
+ifdef::env-github[]
+include::interval.yaml[]
+endif::[]
+ifndef::env-github[]
 [source,YAML]
 ----
 include::interval.yaml[]
 ----
+endif::[]
 
 == Representation: Text
 

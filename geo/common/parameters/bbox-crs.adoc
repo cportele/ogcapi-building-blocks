@@ -26,7 +26,12 @@ If the `bbox-crs` parameter is specified, then the values of the `bbox` paramete
 
 == OpenAPI 3.0 specification
 
+ifdef::env-github[]
+include::bbox-crs.yaml[]
+endif::[]
+ifndef::env-github[]
 [source,YAML]
 ----
 include::bbox-crs.yaml[]
 ----
+endif::[]

@@ -45,10 +45,15 @@ Links are embedded as objects in JSON representations of OGC API resources.
 
 === Schema
 
+ifdef::env-github[]
+include::link.yaml[]
+endif::[]
+ifndef::env-github[]
 [source,YAML]
 ----
 include::link.yaml[]
 ----
+endif::[]
 
 == Representation: HTTP Header 
 

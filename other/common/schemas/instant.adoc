@@ -34,10 +34,15 @@ An instant is embedded as a string in JSON representations of OGC API resources.
 
 === Schema
 
+ifdef::env-github[]
+include::instant.yaml[]
+endif::[]
+ifndef::env-github[]
 [source,YAML]
 ----
 include::instant.yaml[]
 ----
+endif::[]
 
 == Representation: Text 
 

@@ -225,10 +225,15 @@ The "dc_buildings" collection is only offered in the default CRS (i.e., WGS 84 l
 
 === Schema
 
+ifdef::env-github[]
+include::collections.yaml[]
+endif::[]
+ifndef::env-github[]
 [source,YAML]
 ----
 include::collections.yaml[]
 ----
+endif::[]
 
 == Representation: HTML 
 

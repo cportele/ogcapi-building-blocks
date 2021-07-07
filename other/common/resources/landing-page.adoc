@@ -86,10 +86,15 @@ The JSON representation is the currently recommended representation that all API
 
 === Schema
 
+ifdef::env-github[]
+include::landing-page.yaml[]
+endif::[]
+ifndef::env-github[]
 [source,YAML]
 ----
 include::landing-page.yaml[]
 ----
+endif::[]
 
 == Representation: HTML 
 

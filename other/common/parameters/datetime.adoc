@@ -62,7 +62,12 @@ If a resource has multiple temporal geometry properties, it is the decision of t
 
 == OpenAPI 3.0 specification
 
+ifdef::env-github[]
+include::datetime.yaml[]
+endif::[]
+ifndef::env-github[]
 [source,YAML]
 ----
 include::datetime.yaml[]
 ----
+endif::[]

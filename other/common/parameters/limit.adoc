@@ -37,9 +37,14 @@ If the request selects more resources than is returned in the response (the numb
 
 == OpenAPI 3.0 specification
 
+ifdef::env-github[]
+include::limit.yaml[]
+endif::[]
+ifndef::env-github[]
 [source,YAML]
 ----
 include::limit.yaml[]
 ----
+endif::[]
 
 The values for `minimum`, `maximum` and `default` are only examples and may be changed.

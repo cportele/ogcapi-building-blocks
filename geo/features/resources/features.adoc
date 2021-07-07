@@ -237,10 +237,15 @@ In addition to the pre-defined properties listed above, each GeoJSON feature col
 
 === Schema
 
+ifdef::env-github[]
+include::features.yaml[]
+endif::[]
+ifndef::env-github[]
 [source,YAML]
 ----
 include::features.yaml[]
 ----
+endif::[]
 
 == Representation: HTML 
 

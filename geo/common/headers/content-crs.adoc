@@ -44,7 +44,12 @@ CRS-value = "<" URI-reference ">"
 
 == OpenAPI 3.0 specification
 
+ifdef::env-github[]
+include::content-crs.yaml[]
+endif::[]
+ifndef::env-github[]
 [source,YAML]
 ----
 include::content-crs.yaml[]
 ----
+endif::[]

@@ -45,10 +45,15 @@ A bounding box is embedded as an array in JSON representations of OGC API resour
 
 === Schema
 
+ifdef::env-github[]
+include::bbox.yaml[]
+endif::[]
+ifndef::env-github[]
 [source,YAML]
 ----
 include::bbox.yaml[]
 ----
+endif::[]
 
 == Representation: Text 
 

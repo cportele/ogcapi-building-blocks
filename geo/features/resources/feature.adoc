@@ -100,10 +100,15 @@ In addition to the pre-defined properties listed above, each GeoJSON feature inc
 
 === Schema
 
+ifdef::env-github[]
+include::feature.yaml[]
+endif::[]
+ifndef::env-github[]
 [source,YAML]
 ----
 include::feature.yaml[]
 ----
+endif::[]
 
 == Representation: HTML 
 

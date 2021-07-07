@@ -30,7 +30,12 @@ How the supported coordinate reference systems are specified, depends on the res
 
 == OpenAPI 3.0 specification
 
+ifdef::env-github[]
+include::bbox-crs.yaml[]
+endif::[]
+ifndef::env-github[]
 [source,YAML]
 ----
 include::bbox-crs.yaml[]
 ----
+endif::[]
