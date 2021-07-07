@@ -99,9 +99,12 @@ As can be seen in the example, there can be multiple ways to construct the overa
 
 === Schema
 
+ifdef::env-github
 include::extent.yaml[]
-
+endif::[]
+ifndef::env-github
 [source,YAML]
 ----
 include::extent.yaml[]
 ----
+endif::[]
