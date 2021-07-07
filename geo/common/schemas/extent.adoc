@@ -99,6 +99,8 @@ As can be seen in the example, there can be multiple ways to construct the overa
 
 === Schema
 
+include::extent.yaml[]
+
 [source,YAML]
 ----
 include::extent.yaml[]
