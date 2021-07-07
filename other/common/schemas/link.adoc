@@ -1,0 +1,63 @@
+= Link
+
+Version: 1.0.1
+
+== Overview
+
+Web linking according to http://tools.ietf.org/rfc/rfc8288.txt[RFC 8288] is used to express relationships between resources.
+
+[[properties]]
+== Pre-defined properties
+
+.Properties
+[cols="20,10,70",options="header"]
+!===
+|Property |Type |Description
+|href |URI |**REQUIRED**. The link target URI, specified as an absolute or relative URI-Reference.
+|rel |String |**REQUIRED**. The link relation type. It identifies the semantics of the link, or it indicates that the target resource has particular attributes, or exhibits particular behaviors. All link relation types discussed in OGC API standards are either specified in the https://www.iana.org/assignments/link-relations[IANA link relation type register] or the http://www.opengis.net/def/rel[OGC link relation type register].
+|type |String |The `type` attribute, when present, is a hint indicating what the media type of the result of dereferencing the link should be. Note that this is only a hint; for example, it does not override the `Content-Type` header field of a HTTP response obtained by actually following the link.
+|title |String |The `title` attribute, when present, is used to label the destination of a link such that it can be used as a human-readable identifier in the language indicated by the `Content-Language` header field (if present).
+|hreflang |String |The `hreflang` attribute, when present, is a hint indicating what the language of the result of dereferencing the link should be. Note that this is only a hint; for example, it does not override the `Content-Language` header field of a HTTP response obtained by actually following the link.
+|length |Integer |The `length` attribute, when present, indicates an advisory length in octets of the representation returned when the target URI in the `href` attribute is dereferenced. Note that this is only a hint; for example, it does not override the `Content-Length` header field of a HTTP response obtained by actually following the link.
+!===
+
+Additional link attributes may be added to the Link object.
+
+== Representation: JSON 
+
+Links are embedded as objects in JSON representations of OGC API resources.
+
+=== Example
+
+.Link example (JSON)
+=================
+[source,JSON]
+----
+{
+   "href": "http://data.example.org/api.html",
+   "rel": "service-doc", 
+   "type": "text/html", 
+   "title": "the API documentation",
+   "hreflang": "en" 
+}
+----
+=================
+
+=== Schema
+
+[source,YAML]
+----
+include::link.yaml[]
+----
+
+== Representation: HTTP Header 
+
+Links should be included in HTTP headers of requests or responses, too.
+
+.Link example (Header)
+=================
+[source,TEXT]
+----
+Link: <http://data.example.org/api.html>"; rel="service-doc"; type="text/html"; title="the API documentation"; hreflang="en"
+----
+=================

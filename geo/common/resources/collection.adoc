@@ -1,0 +1,143 @@
+= Resource: OGC API Collection
+
+== Overview
+
+The distribution of a geospatial dataset in an API is organized into one or more link:collections.adoc[collections of data]. 
+
+Each OGC API Collection resource provides information about and access to the data in the collection.
+
+== Path template
+
+`{landingPage}/collections/{collectionId}`
+
+* `{landingPage}` is the URI of the landing page of the API
+* `{collectionId}` is the `id` property of the collection
+
+[[properties]]
+== Pre-defined properties
+
+.Properties
+[cols="20,10a,70a",options="header"]
+!===
+|Property |Type |Description
+|id |string |**REQUIRED**. Unique identifier of the collection. The identifier is used, for example, as a path element in URIs.
+|title |string |The human readable title of the collection.
+|description |string |A free-text description of the resources in the collection. The content may include Markdown and HTML markup.
+|itemType |string |Indicator about the type of the data items in the collection. The items can be accessed by following the `items` link, if provided. The default value is "feature".
+|links |[ link:../../../other/common/schemas/link.adoc[Link] ] |**REQUIRED**. Links to other resources. See <<link-relations>> for typical link relations included in a collection.
+|extent |[ link:../schemas/extent.adoc[Extent] ] |**CONDITIONAL**. The extent of the data in the collection. The property has to be provided, if the data has a spatial or temporal extent.
+|crs |[ URI ] |The list of coordinate reference systems supported by the API for this collection. Each coordinate reference systems is identified by a URI. See <<crs-identifiers>>. At least WGS84 longitude/latitude (with optional ellipsoidal height) has to be supported.
+
+If the collection is embedded in an link:collections.adoc[OGC API Collections resource] that includes a global list of CRS identifiers, the special value "#/crs" can be used to declare all coordinate reference systems in the global list as supported coordinate reference systems of this collection.
+
+Default: `[ "http://www.opengis.net/def/crs/OGC/1.3/CRS84" ]`
+|storageCrs |URI |The cooordinate reference system, from the list of supported CRS identifiers, in which the data is stored internally and that may be used to retrieve features from the collection without the need to apply a CRS transformation.
+|storageCrsCoordinateEpoch |number |The point in time at which coordinates in the feature collection are referenced to the dynamic coordinate reference system in `storageCrs`. The epoch is expressed as a decimal year in the Gregorian calendar; for example, March 25th, 2017, in the Gregorian calendar is epoch 2017.23.
+!===
+
+[[link-relations]]
+== Link relation types
+
+.Link relation types
+[cols="25,75a",options="header"]
+!===
+|Link relation type |Description
+|`items` |**REQUIRED**. Refers to the items in the collection, for example, a link:../../features/resources/features.adoc[Features resource], if the `itemType` is "feature". 
+
+This link relation type will not be registered with IANA. It will in the future be superseded by the `\http://www.opengis.net/def/rel/ogc/1.0/items` link relation type.
+|`\http://www.opengis.net/def/rel/ogc/1.0/items` |**RECOMMENDED**. Refers to the items in the collection, for example, a link:../../features/resources/features.adoc[Features resource], if the `itemType` is "feature". 
+
+This link relation type will in the future supersede the `items` link relation type, so it is recommended to already include this link.
+|`self` |**REQUIRED**. Link to the resource in the current representation.
+|`alternate` |**REQUIRED**. Link to the resource in every other media type supported by the server.
+|`license` |**RECOMMENDED**. Refers to the license associated with the data.
+|`describedby` |Refers to a resource providing information about the data, for example, a schema for the data items or a separate metadata resource.
+|`enclosure` |Refers to a distribution of the data that is available for download as a single file.
+!===
+
+[[crs-identifiers]]
+== Coordinate reference system (CRS) identifiers
+
+It is common practice to use CRS identifiers using the following template:
+
+http://www.opengis.net/def/crs/{authority}/{version}/{code}
+
+In this template, the token `{authority}` is a placeholder for a value that designates the authority responsible for the definition of this CRS. Typical values include "EPSG" and "OGC".
+
+The token `{version}` is a placeholder for the specific version of the CRS definition or `0` for un-versioned CRS definitions.
+
+The token `{code}` is a placeholder for the authority’s code for the CRS. Some frequently used coordinate reference systems are:
+
+* http://www.opengis.net/def/crs/OGC/1.3/CRS84 - WGS84 longitude, latitude
+* http://www.opengis.net/def/crs/EPSG/0/4326 - WGS84 latitude, longitude
+* http://www.opengis.net/def/crs/OGC/0/CRS84h - WGS84 longitude, latitude, ellipsoidal height
+* http://www.opengis.net/def/crs/EPSG/0/4979 - WGS84 latitude, longitude, ellipsoidal height
+* http://www.opengis.net/def/crs/EPSG/0/3857 - Web Mercator (used in Web Mapping)
+* http://www.opengis.net/def/crs/EPSG/0/4258 - ETRS89 latitude, longitude
+
+== Representation: JSON 
+
+The JSON representation is the currently recommended representation that all APIs should support.
+
+=== Example
+
+.Collection example (JSON)
+[%collapsible]
+=================
+[source,JSON]
+----
+{
+   "id": "buildings",
+   "title": "Buildings",
+   "description": "Buildings in the city of Bonn.",
+   "itemType": "feature",
+   "extent": {
+      "spatial": {
+         "bbox": [ [ 7.01, 50.63, 7.22, 50.78 ] ]
+      },
+      "temporal": {
+         "interval": [ [ "2010-02-15T12:34:56Z", null ] ]
+      }
+   },
+   "links": [
+      { "href": "https://data.example.org/collections/buildings.json",
+         "rel": "self", "type": "application/json", "title": "This collection" },
+      { "href": "https://data.example.org/collections/buildings.html",
+         "rel": "alternate", "type": "text/html", "title": "This collection as HTML" },
+      { "href": "https://data.example.org/collections/buildings/items",
+         "rel": "items", "type": "application/geo+json",
+         "title": "Buildings" },
+      { "href": "https://data.example.org/collections/buildings/items",
+         "rel": "http://www.opengis.net/def/rel/ogc/1.0/items", "type": "application/geo+json",
+         "title": "Buildings" },
+      { "href": "https://creativecommons.org/publicdomain/zero/1.0/",
+         "rel": "license", "type": "text/html",
+         "title": "CC0-1.0" },
+      { "href": "https://creativecommons.org/publicdomain/zero/1.0/rdf",
+         "rel": "license", "type": "application/rdf+xml",
+         "title": "CC0-1.0" }
+   ]
+}
+----
+=================
+
+=== Media type
+
+`application/json`
+
+=== Schema
+
+[source,YAML]
+----
+include::collection.yaml[]
+----
+
+== Representation: HTML 
+
+Providing an HTML representation is recommended so that the resource can be displayed in a web browser and indexed by search engines.
+
+An HTML representation should include all information that is part of the JSON representation.
+
+=== Media type
+
+`text/html`
