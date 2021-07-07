@@ -29,9 +29,9 @@ Experimental repository for building blocks from the [OGC API standards](https:/
       * [datetime](other/common/parameters/datetime.adoc)
       * [limit](other/common/parameters/limit.adoc)
     * `schemas` - Reusable data types
-      * [Instant](geo/common/schemas/instant.adoc)
-      * [Interval](geo/common/schemas/interval.adoc)
-      * [Links](geo/common/schemas/link.adoc)
+      * [Instant](other/common/schemas/instant.adoc)
+      * [Interval](other/common/schemas/interval.adoc)
+      * [Links](other/common/schemas/link.adoc)
 
 Currently only building blocks from [Part 1: Core](http://docs.ogc.org/DRAFTS/17-069r4.html) and [Part 2: Coordinate Reference Systems by Reference](https://docs.ogc.org/DRAFTS/18-058r1.html) of OGC API Features are included.
 
