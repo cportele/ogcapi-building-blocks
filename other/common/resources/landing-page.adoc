@@ -23,7 +23,9 @@ The landing page will typically also include essential metadata about the API, f
 [[link-relations]]
 == Link relation types
 
-.Link relation types
+The following link relation types are commonly used in links from an OGC Collection:
+
+.Outgoing link relation types
 [cols="25,75a",options="header"]
 !===
 |Link relation type |Description
@@ -35,14 +37,25 @@ This link relation type will not be registered with IANA. It will in the future 
 |`\http://www.opengis.net/def/rel/ogc/1.0/conformance` |**RECOMMENDED**. Refers to a link:conformance-declaration.adoc[conformance declaration] resource that identifies the specifications that the API conforms to. 
 
 This link relation type will in the future supersede the `conformance` link relation type, so it is recommended to already include this link.
-|`data` |**CONDITIONAL**. Refers to a link:../../../geo/common/resources/collections.adoc[OGC API Collections] resource that represents the root resource of the distributions of a dataset.
+|`data` |**CONDITIONAL**. Refers to a link:../../../geo/common/resources/collections.adoc[OGC Collections] resource that represents the root resource of the distributions of a dataset.
 
 This link relation type will not be registered with IANA. It will in the future be superseded by the `\http://www.opengis.net/def/rel/ogc/1.0/data` link relation type.
-|`\http://www.opengis.net/def/rel/ogc/1.0/data` |Refers to a link:../../../geo/common/resources/collections.adoc[OGC API Collections] resource that represents the root resource of the distributions of a dataset.
+|`\http://www.opengis.net/def/rel/ogc/1.0/data` |Refers to a link:../../../geo/common/resources/collections.adoc[OGC Collections] resource that represents the root resource of the distributions of a dataset.
 
 This link relation type will in the future supersede the `data` link relation type, so it is recommended to already include this link.
 |`self` |**STRONGLY RECOMMENDED**. Link to the resource in the current representation.
 |`alternate` |**STRONGLY RECOMMENDED**. Link to the resource in every other media type supported by the server.
+!===
+
+The following link relation types may be useful in links to an OGC API Landing Page:
+
+.Incoming link relation types
+[cols="25,75a",options="header"]
+!===
+|Link relation type |Description
+|`home` |From sub-resources or external resources.
+
+The link relation type is not yet registered with IANA. It is proposed in an Internet Draft https://datatracker.ietf.org/doc/html/draft-nottingham-json-home-06[Home Documents for HTTP APIs].
 !===
 
 == Representation: JSON 

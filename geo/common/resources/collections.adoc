@@ -1,4 +1,4 @@
-= Resource: OGC API Collections
+= Resource: OGC Collections
 
 == Overview
 
@@ -7,13 +7,7 @@ The distribution of a geospatial dataset in an API is organized into one or more
 * By semantic type: For example, an airport dataset may be distributed with collections for buildings, taxiways, runways, etc.
 * By spatial clustering: For example, the same airport dataset may be distributed with a collection for each airport or country. 
 
-The OGC API Collections resource provides information about and access to the data in each collection of the distribution.
-
-== Path template
-
-`{landingPage}/collections`
-
-* `{landingPage}` is the URI of the landing page of the API
+The OGC Collections resource provides information about and access to the data in each collection of the distribution.
 
 [[properties]]
 == Pre-defined properties
@@ -23,14 +17,16 @@ The OGC API Collections resource provides information about and access to the da
 !===
 |Property |Type |Description
 |links |[ link:../../../other/common/schemas/link.adoc[Link] ] |**REQUIRED**. Links to other resources. See <<link-relations>> for typical link relations included in a collection.
-|collections |[ link:collection.adoc[OGC API Collection] ] |**REQUIRED**. The collections with data in this API.
+|collections |[ link:collection.adoc[OGC Collection] ] |**REQUIRED**. The collections with data in this API.
 |crs |[ URI ] |A global list of CRS identifiers that are supported by collections in this API.
 !===
 
 [[link-relations]]
 == Link relation types
 
-.Link relation types
+The following link relation types are commonly used in links from an OGC Collections resource:
+
+.Outgoing link relation types
 [cols="25,75a",options="header"]
 !===
 |Link relation type |Description
@@ -39,6 +35,20 @@ The OGC API Collections resource provides information about and access to the da
 |`license` |**RECOMMENDED**. Refers to the license associated with the data.
 |`describedby` |Refers to a resource providing information about the data, for example, a schema for the data items or a separate metadata resource.
 |`enclosure` |Refers to a distribution of the data that is available for download as a single file.
+!===
+
+The following link relation types are commonly used in links to an OGC Collections resource:
+
+.Incoming link relation types
+[cols="25,75a",options="header"]
+!===
+|Link relation type |Description
+|`data` |From any resource that provides information about the API, e.g. a link:landing-page.adoc[landing page].
+
+This link relation type will not be registered with IANA. It will in the future be superseded by the `\http://www.opengis.net/def/rel/ogc/1.0/data` link relation type.
+|`\http://www.opengis.net/def/rel/ogc/1.0/data` |From any resource that provides information about the API, e.g. a link:landing-page.adoc[landing page].
+
+This link relation type will in the future supersede the `data` link relation type.
 !===
 
 == Representation: JSON 

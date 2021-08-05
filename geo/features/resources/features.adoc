@@ -4,18 +4,11 @@ Version: 1.0.1
 
 == Overview
 
-The features in an link:../../common/resources/collection.adoc[OGC API Collection].
+The features in an link:../../common/resources/collection.adoc[OGC Collection].
 
 This resource supports spatial filtering with the link:../../common/parameters/bbox.adoc[`bbox` parameter], temporal filtering with the link:../../../other/common/parameters/datetime.adoc[`datetime` parameter].
 
 To avoid overloading clients and servers, both clients and servers can limit the maximum number of features in a representation of the resource. In this case, paging is supported to provide access to all the features in the collection that match the specified filter conditions.
-
-== Path template
-
-`{landingPage}/collections/{collectionId}/items`
-
-* `{landingPage}` is the URI of the landing page of the API
-* `{collectionId}` is the `id` property of the collection
 
 [[properties]]
 == Pre-defined properties
@@ -34,7 +27,9 @@ To avoid overloading clients and servers, both clients and servers can limit the
 [[link-relations]]
 == Link relation types
 
-.Link relation types
+The following link relation types are commonly used in links from a Features resource:
+
+.Outgoing link relation types
 [cols="25,75a",options="header"]
 !===
 |Link relation type |Description
@@ -46,6 +41,20 @@ To avoid overloading clients and servers, both clients and servers can limit the
 |`last` |If the response is a page of a paged response, a link may reference the last page.
 |`license` |**RECOMMENDED**. Refers to the license associated with the data.
 |`describedby` |Refers to a resource providing information about the data, for example, a schema for the feature collection or a separate metadata resource.
+!===
+
+The following link relation types are commonly used in links to a Features resource:
+
+.Incoming link relation types
+[cols="25,75a",options="header"]
+!===
+|Link relation type |Description
+|`items` |From a link:../../common/resources/collection.adoc[OGC Collection resource]. 
+
+This link relation type will not be registered with IANA. In the future, it may be superseded by the `search` link relation type.
+|`search` |From any resource that wants to link to a resource that supports searching the features, e.g. from a link:../../common/resources/collection.adoc[OGC Collection resource].
+
+This link relation type is expected to supersede the use of the `items` link relation type.
 !===
 
 == Representation: GeoJSON 

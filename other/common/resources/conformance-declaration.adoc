@@ -1,18 +1,12 @@
-= Resource: OGC API Conformance Declaration
+= Resource: OGC Conformance Declaration
 
 Version: 1.0.1
 
 == Description
 
-An OGC API Conformance Declaration lists the conformance classes from standards or community specifications, identified by a URI, that the API conforms to. 
+An OGC Conformance Declaration lists the conformance classes from standards or community specifications, identified by a URI, that the API conforms to. 
 
 Clients may but are not required to use this information. This resource is intended to support "generic" clients that want to access multiple implementations of OGC API standards - and not "just" a specific API / server. For this purpose, the server can declare the conformance classes it implements and conforms to.
-
-== Path template
-
-`{landingPage}/conformance`
-
-* `{landingPage}` is the URI of the landing page of the API
 
 [[properties]]
 == Pre-defined properties
@@ -22,6 +16,25 @@ Clients may but are not required to use this information. This resource is inten
 !===
 |Property |Type |Description
 |conformsTo |[ URI ] |**REQUIRED**. The list of URIs of all OGC API conformance classes that the API conforms to. Servers MAY add also URIs of conformance classes that have not been standardized by OGC.
+!===
+
+[[link-relations]]
+== Link relation types
+
+This resource has no requirements or recommendations for outgoing links.
+
+The following link relation types are commonly used in links to an OGC Conformance Declaration:
+
+.Incoming link relation types
+[cols="25,75a",options="header"]
+!===
+|Link relation type |Description
+|`conformance` |From any resource that provides information about the API, e.g. a link:landing-page.adoc[landing page].
+
+This link relation type will not be registered with IANA. It will in the future be superseded by the `\http://www.opengis.net/def/rel/ogc/1.0/conformance` link relation type.
+|`\http://www.opengis.net/def/rel/ogc/1.0/conformance` |From any resource that provides information about the API, e.g. a link:landing-page.adoc[landing page].
+
+This link relation type will in the future supersede the `conformance` link relation type.
 !===
 
 == Representation: JSON 

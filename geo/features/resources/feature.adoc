@@ -4,15 +4,7 @@ Version: 1.0.1
 
 == Overview
 
-A feature. Every feature is a sub-resource of an link:../../common/resources/collection.adoc[OGC API Collection].
-
-== Path template
-
-`{landingPage}/collections/{collectionId}/items/{featureId}`
-
-* `{landingPage}` is the URI of the landing page of the API
-* `{collectionId}` is the `id` property of the collection
-* `{featureId}` is the `id` property of the feature
+A feature. Every feature is a sub-resource of an link:../../common/resources/collection.adoc[OGC Collection].
 
 [[properties]]
 == Pre-defined properties
@@ -30,14 +22,27 @@ In addition, there will be properties that describe the real-world entity that t
 [[link-relations]]
 == Link relation types
 
-.Link relation types
+The following link relation types are commonly used in links from a Feature:
+
+.Outgoing link relation types
 [cols="25,75a",options="header"]
 !===
 |Link relation type |Description
 |`self` |**REQUIRED**. Link to the resource in the current representation.
 |`alternate` |**REQUIRED**. Link to the resource in every other media type supported by the server.
-|`collection` |**REQUIRED**. Link to the OGC API Collection that this feature belongs to.
+|`collection` |**REQUIRED**. Link to the OGC Collection that this feature belongs to.
 |`describedby` |Refers to a resource providing information about the data, for example, a schema for the feature or a separate metadata resource.
+|`type` |Refers to the canonical URI of a feature type that the feature implements.
+|`canonical` |Refers to a persistent URI of this feature that will not change between API changes. 
+!===
+
+The following link relation types are commonly used in links to a Feature:
+
+.Incoming link relation types
+[cols="25,75a",options="header"]
+!===
+|Link relation type |Description
+|`item` |May by used to point to the feature from a static link:../../common/resources/collection.adoc[OGC Collection resource].
 !===
 
 == Representation: GeoJSON 

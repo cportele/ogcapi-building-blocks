@@ -5,8 +5,8 @@ Experimental repository for building blocks from the [OGC API standards](https:/
 * `geo` - geospatial building blocks
   * `common` - building blocks applicable to multiple geospatial resource types
     * `resources` - API resources
-      * [OGC API Collections](geo/common/resources/collections.adoc)
-      * [OGC API Collection](geo/common/resources/collection.adoc)
+      * [OGC Collections](geo/common/resources/collections.adoc)
+      * [OGC Collection](geo/common/resources/collection.adoc)
     * `parameters` - HTTP query parameters
       * [bbox-crs](geo/common/parameters/bbox-crs.adoc)
       * [bbox](geo/common/parameters/bbox.adoc)
@@ -24,7 +24,7 @@ Experimental repository for building blocks from the [OGC API standards](https:/
   * `common` - building blocks applicable to multiple geospatial resource types
     * `resources` - API resources
       * [OGC API Landing Page](other/common/resources/landing-page.adoc)
-      * [OGC API Conformance Declaration](other/common/resources/conformance-declaration.adoc)
+      * [OGC Conformance Declaration](other/common/resources/conformance-declaration.adoc)
     * `parameters` - HTTP query parameters
       * [datetime](other/common/parameters/datetime.adoc)
       * [limit](other/common/parameters/limit.adoc)

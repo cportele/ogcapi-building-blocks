@@ -8,6 +8,8 @@ properties:
     format: uri-reference
   rel:
     type: string
+  anchor:
+    type: string
   type:
     type: string
   hreflang:
