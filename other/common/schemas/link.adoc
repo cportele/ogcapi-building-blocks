@@ -4,7 +4,7 @@ Version: 1.0.1
 
 == Overview
 
-Web linking according to http://tools.ietf.org/rfc/rfc8288.txt[RFC 8288] is used to express relationships between resources.
+Web linking according to http://tools.ietf.org/rfc/rfc8288.txt[RFC 8288] is used to express relationships between resources. The JSON object representation of links described here is used consistently in OGC API's.
 
 [[properties]]
 == Pre-defined properties
@@ -25,10 +25,6 @@ The `anchor` attribute is currently not mentioned in OGC API Features.
 !===
 
 Additional link attributes may be added to the Link object.
-
-== Representation: JSON 
-
-Links are embedded as objects in JSON representations of OGC API resources.
 
 === Example
 

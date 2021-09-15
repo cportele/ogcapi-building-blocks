@@ -4,7 +4,7 @@ Version: 1.0.1
 
 == Description
 
-The OGC API Landing Page provides links to important resources in the API. All other OGC API resources are sub-resources of this resource.
+The OGC API Landing Page provides links to important resources in the API, as a JSON object. All other OGC API resources are sub-resources of this resource.
 
 The landing page will typically also include essential metadata about the API, for example, a title and a description.
 
@@ -58,10 +58,6 @@ The following link relation types may be useful in links to an OGC API Landing P
 The link relation type is not yet registered with IANA. It is proposed in an Internet Draft https://datatracker.ietf.org/doc/html/draft-nottingham-json-home-06[Home Documents for HTTP APIs].
 !===
 
-== Representation: JSON 
-
-The JSON representation is the currently recommended representation that all APIs should support.
-
 === Example
 
 .Landing page example (JSON)
@@ -109,7 +105,7 @@ include::landing-page.yaml[]
 ----
 endif::[]
 
-== Representation: HTML 
+== Alternate Representation: HTML 
 
 Providing an HTML representation is recommended so that the resource can be displayed in a web browser and indexed by search engines.
 
