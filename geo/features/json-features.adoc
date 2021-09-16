@@ -4,9 +4,9 @@ Version: 1.0.1
 
 == Overview
 
-The features in an link:../../common/resources/collection.adoc[OGC Collection].
+The features in an link:../common/json-collection.adoc[OGC Collection].
 
-This resource supports spatial filtering with the link:../../common/parameters/bbox.adoc[`bbox` parameter], temporal filtering with the link:../../../other/common/parameters/datetime.adoc[`datetime` parameter].
+This resource supports spatial filtering with the link:../../common/parameters/bbox.adoc[`bbox` parameter], temporal filtering with the link:../common/parameters-datetime.adoc[`datetime` parameter].
 
 To avoid overloading clients and servers, both clients and servers can limit the maximum number of features in a representation of the resource. In this case, paging is supported to provide access to all the features in the collection that match the specified filter conditions.
 
@@ -17,8 +17,8 @@ To avoid overloading clients and servers, both clients and servers can limit the
 [cols="20,10a,70a",options="header"]
 !===
 |Property |Type |Description
-|links |[ link:../../../other/common/schemas/link.adoc[Link] ] |**REQUIRED**. Links to other resources. See <<link-relations>> for typical link relations of this resource type.
-|features |[ link:feature.adoc[Feature] ] |**REQUIRED**. The features in the collection.
+|links |[ link:../../ogc-utils/json-link.adoc[Link] ] |**REQUIRED**. Links to other resources. See <<link-relations>> for typical link relations of this resource type.
+|features |[ link:json-feature.adoc[Feature] ] |**REQUIRED**. The features in the collection.
 |timeStamp |string |The RFC 3339 time stamp when the resource representation was generated.
 |numberMatched |integer |**RECOMMENDED**. If a property `numberMatched` is included in the response, the value is the number of features in the feature collections that match the filter parameters like `bbox`, `datetime`, etc. Servers can omit this information, if the information about the number of matching features is not known or difficult to compute.
 |numberReturned |integer |**RECOMMENDED**. If a property `numberReturned` is included in the response, the value is the number of features in the response document. Servers can omit this information, if the information about the number of features is not known or difficult to compute.
@@ -49,7 +49,7 @@ The following link relation types are commonly used in links to a Features resou
 [cols="25,75a",options="header"]
 !===
 |Link relation type |Description
-|`items` |From a link:../../common/resources/collection.adoc[OGC Collection resource]. 
+|`items` |From a link:../common/json-collection.adoc[OGC Collection resource]. 
 
 This link relation type will not be registered with IANA. In the future, it may be superseded by the `search` link relation type.
 |`search` |From any resource that wants to link to a resource that supports searching the features, e.g. from a link:../../common/resources/collection.adoc[OGC Collection resource].
@@ -247,7 +247,7 @@ In addition to the pre-defined properties listed above, each GeoJSON feature col
 === Schema
 
 ifdef::env-github[]
-include::features.yaml[]
+include::schemas/json-features.yaml[]
 endif::[]
 ifndef::env-github[]
 [source,YAML]

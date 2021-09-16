@@ -4,7 +4,7 @@ Version: 1.0.1
 
 == Overview
 
-A feature. Every feature is a sub-resource of an link:../../common/resources/collection.adoc[OGC Collection].
+A feature. Every feature is a sub-resource of an link:../common/json-collection.adoc[OGC Collection].
 
 [[properties]]
 == Pre-defined properties
@@ -13,7 +13,7 @@ A feature. Every feature is a sub-resource of an link:../../common/resources/col
 [cols="20,10a,70a",options="header"]
 !===
 |Property |Type |Description
-|links |[ link:../../../other/common/schemas/link.adoc[Link] ] |**REQUIRED**. Links to other resources. See <<link-relations>> for typical link relations of this resource type.
+|links |[ link:../../ogc-utils/json-link.adoc[Link] ] |**REQUIRED**. Links to other resources. See <<link-relations>> for typical link relations of this resource type.
 |id |string or integer |**REQUIRED**. The feature identifier in the collection.
 !===
 
@@ -42,7 +42,7 @@ The following link relation types are commonly used in links to a Feature:
 [cols="25,75a",options="header"]
 !===
 |Link relation type |Description
-|`item` |May by used to point to the feature from a static link:../../common/resources/collection.adoc[OGC Collection resource].
+|`item` |May by used to point to the feature from a static link:../common/json-collection.adoc[OGC Collection resource].
 !===
 
 == Representation: GeoJSON 
@@ -106,7 +106,7 @@ In addition to the pre-defined properties listed above, each GeoJSON feature inc
 === Schema
 
 ifdef::env-github[]
-include::feature.yaml[]
+include::schemas/json-feature.yaml[]
 endif::[]
 ifndef::env-github[]
 [source,YAML]

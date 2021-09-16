@@ -36,7 +36,7 @@ Additional properties for other aspects may be added.
 [cols="20,10,70",options="header"]
 !===
 |Property |Type |Description
-|bbox |[ link:bbox.adoc[Bounding Box] ] |**REQUIRED**. The first bounding box in the array describes the overall spatial extent. All subsequent bounding boxes describe more precise extents, e.g., to identify clusters of data. Clients only interested in the overall extent will only access the first item in the array.
+|bbox |[ link:json-bbox.adoc[Bounding Box] ] |**REQUIRED**. The first bounding box in the array describes the overall spatial extent. All subsequent bounding boxes describe more precise extents, e.g., to identify clusters of data. Clients only interested in the overall extent will only access the first item in the array.
 
 The extent information will typically be derived automatically and be the minimal axis-aligned bounding box of the resource.
 |crs |URI |The spatial coordinate reference system of the coordinates in `bbox`. 
@@ -53,7 +53,7 @@ Additional properties for other descriptions of the spatial extent may be added.
 [cols="20,10,70",options="header"]
 !===
 |Property |Type |Description
-|interval |[ link:../../../other/common/interval.adoc[Interval] ] |**REQUIRED**. The first interval in the array describes the overall temporal extent. All subsequent intervals describe more precise extents, e.g., to identify clusters of data. Clients only interested in the overall extent will only access the first item in the array.
+|interval |[ link:../../ogc-utils/json-interval.adoc[Interval] ] |**REQUIRED**. The first interval in the array describes the overall temporal extent. All subsequent intervals describe more precise extents, e.g., to identify clusters of data. Clients only interested in the overall extent will only access the first item in the array.
 
 The extent information will typically be derived automatically and be the minimal interval of the resource.
 |trs |URI |The temporal coordinate reference system of instants in `interval`. 
@@ -96,7 +96,7 @@ As can be seen in the example, there can be multiple ways to construct the overa
 === Schema
 
 ifdef::env-github[]
-include::extent.yaml[]
+include::schemas/json-extent.yaml[]
 endif::[]
 ifndef::env-github[]
 [source,YAML]
