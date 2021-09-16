@@ -19,13 +19,13 @@ Experimental repository for building blocks from the [OGC API standards](https:/
     * `resources` - API resources
       * [Features](geo/features/json-features.adoc)
       * [Feature](geo/features/json-feature.adoc)
-* `ogc-utilities` - building blocks that are used in OGC API's but are not inherently geospatial. They were created to ensure consistency within OGC API's where there was not a clear mainstream standard.  They aim to be in line with best practices of the web and could be replaced, e.g. by building blocks specified in an IETF RFC or similar, if and when they are available. API's built with the geo building blocks do not need to use these, but they provide a nice default option that OGC-focused tools will understand.
+* `ogc-utils` - Utility building blocks that are used in OGC API's but are not inherently geospatial. They were created to ensure consistency within OGC API's where there was not a clear mainstream standard.  They aim to be in line with best practices of the web and could be replaced, e.g. by building blocks specified in an IETF RFC or similar, if and when they are available. API's built with the geo building blocks do not need to use these, but they provide a nice default option that OGC-focused tools will understand.
   * `data types` - JSON representations of various utilities used in OGC API's
-    * [OGC API Landing Page](ogc-utilities/json-landing-page.adoc)
-    * [OGC Conformance Declaration](ogc-utilities/json-conformance-declaration.adoc)
-    * [Instant](ogc-utilities/json-instant.adoc)
-    * [Interval](ogc-utilities/json-interval.adoc)
-    * [Link](ogc-utilities/json-link.adoc)
+    * [OGC API Landing Page](ogc-utils/json-landing-page.adoc)
+    * [OGC Conformance Declaration](ogc-utils/json-conformance-declaration.adoc)
+    * [Instant](ogc-utils/json-instant.adoc)
+    * [Interval](ogc-utils/json-interval.adoc)
+    * [Link](ogc-utils/json-link.adoc)
   * `parameters` - HTTP query parameters
     * [datetime](ogc-utilities/parameters/datetime.adoc)
     * [limit](ogc-utilities/parameters/limit.adoc)
