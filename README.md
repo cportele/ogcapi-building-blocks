@@ -19,18 +19,16 @@ Experimental repository for building blocks from the [OGC API standards](https:/
     * `resources` - API resources
       * [Features](geo/features/json-features.adoc)
       * [Feature](geo/features/json-feature.adoc)
-* `other` - building blocks that are not inherently geospatial and could be replaced, e.g. by building blocks specified in an IETF RFC or similar, once available
-  * `common` - building blocks applicable to multiple geospatial resource types
-    * `resources` - API resources
-      * [OGC API Landing Page](other/common/resources/landing-page.adoc)
-      * [OGC Conformance Declaration](other/common/resources/conformance-declaration.adoc)
-    * `parameters` - HTTP query parameters
-      * [datetime](other/common/parameters/datetime.adoc)
-      * [limit](other/common/parameters/limit.adoc)
-    * `schemas` - Reusable data types
-      * [Instant](other/common/schemas/instant.adoc)
-      * [Interval](other/common/schemas/interval.adoc)
-      * [Link](other/common/schemas/link.adoc)
+* `ogc-utilities` - building blocks that are used in OGC API's but are not inherently geospatial. They were created to ensure consistency within OGC API's where there was not a clear mainstream standard.  They aim to be in line with best practices of the web and could be replaced, e.g. by building blocks specified in an IETF RFC or similar, if and when they are available. API's built with the geo building blocks do not need to use these, but they provide a nice default option that OGC-focused tools will understand.
+  * `data types` - JSON representations of various utilities used in OGC API's
+    * [OGC API Landing Page](ogc-utilities/json-landing-page.adoc)
+    * [OGC Conformance Declaration](ogc-utilities/json-conformance-declaration.adoc)
+    * [Instant](ogc-utilities/json-instant.adoc)
+    * [Interval](ogc-utilities/json-interval.adoc)
+    * [Link](ogc-utilities/json-link.adoc)
+  * `parameters` - HTTP query parameters
+    * [datetime](ogc-utilities/parameters/datetime.adoc)
+    * [limit](ogc-utilities/parameters/limit.adoc)
 
 Currently only building blocks from [Part 1: Core](http://docs.ogc.org/DRAFTS/17-069r4.html) and [Part 2: Coordinate Reference Systems by Reference](https://docs.ogc.org/DRAFTS/18-058r1.html) of OGC API Features are included.
 
