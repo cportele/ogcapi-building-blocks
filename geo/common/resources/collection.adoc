@@ -2,9 +2,10 @@
 
 == Overview
 
-The distribution of a geospatial dataset in an API is organized into one or more link:collections.adoc[collections of data]. 
+An OGC Collection resource is a JSON object that provides information about and access to a geospatial dataset through links to API endpoints and/or files online.
 
-Each OGC Collection resource provides information about and access to the data in the collection.
+It is often included in an API as one of several link:collections.adoc[collections of data]. 
+
 
 [[properties]]
 == Pre-defined properties
@@ -83,10 +84,6 @@ The token `{code}` is a placeholder for the authority’s code for the CRS. Some
 * http://www.opengis.net/def/crs/EPSG/0/3857 - Web Mercator (used in Web Mapping)
 * http://www.opengis.net/def/crs/EPSG/0/4258 - ETRS89 latitude, longitude
 
-== Representation: JSON 
-
-The JSON representation is the currently recommended representation that all APIs should support.
-
 === Example
 
 .Collection example (JSON)
@@ -144,13 +141,3 @@ ifndef::env-github[]
 include::collection.yaml[]
 ----
 endif::[]
-
-== Representation: HTML 
-
-Providing an HTML representation is recommended so that the resource can be displayed in a web browser and indexed by search engines.
-
-An HTML representation should include all information that is part of the JSON representation.
-
-=== Media type
-
-`text/html`

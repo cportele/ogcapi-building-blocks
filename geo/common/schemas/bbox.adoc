@@ -4,7 +4,7 @@ Version: 1.0.1
 
 == Overview
 
-A bounding box describes a simple spatial extent of a resource, for example, a feature, a feature collection or a dataset. The extent is "simple" in that the bounding box does not describe the precise location and shape of the resource, but provides an axis-aligned approximation of the spatial extent that can be used as an initial test whether two resources are potentially intersecting each other.
+The bounding box JSON object describes a simple spatial extent of a resource. For OGC API's this could be a feature, a feature collection or a dataset, but it can be used in any JSON resource that wants to communicate its rough location. The extent is "simple" in that the bounding box does not describe the precise location and shape of the resource, but provides an axis-aligned approximation of the spatial extent that can be used as an initial test whether two resources are potentially intersecting each other.
 
 The bounding box is also useful when displaying a resource in a map to determine the initial map view.
 
@@ -29,10 +29,6 @@ For WGS 84 longitude/latitude the values are in most cases the sequence of minim
 
 If the vertical axis is included, the third and the sixth number are the bottom and the top of the 3-dimensional bounding box.
 
-== Representation: JSON 
-
-A bounding box is embedded as an array in JSON representations of OGC API resources.
-
 === Example
 
 .Axis-aligned minimum bounding box of the 48 contiguous states of the United States of America (JSON)
@@ -55,9 +51,9 @@ include::bbox.yaml[]
 ----
 endif::[]
 
-== Representation: Text 
+== Alternate Representation: Text 
 
-The text representation of a bounding box is based on the JSON representation and represents the array as comma-separated values.
+The text representation of a bounding box is based on the JSON representation and represents the array as comma-separated values. 
 
 === Example
 

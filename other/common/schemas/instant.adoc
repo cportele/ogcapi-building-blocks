@@ -10,8 +10,6 @@ All timestamps include a timezone. The use of UTC ("Z") is recommended.
 
 This describes the initial range of instant values. This range may be extended in the future to support additional use cases. Clients processing instant values must be prepared to receive other values. Clients may ignore values that they do not understand.
 
-== Representation: JSON 
-
 An instant is embedded as a string in JSON representations of OGC API resources.
 
 === Examples
@@ -44,7 +42,7 @@ include::instant.yaml[]
 ----
 endif::[]
 
-== Representation: Text 
+== Alternate Representation: Text 
 
 The text representation is identical to the RFC 3339 string.
 

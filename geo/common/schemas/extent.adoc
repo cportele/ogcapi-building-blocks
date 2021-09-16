@@ -4,7 +4,7 @@ Version: 1.0.1
 
 == Overview
 
-This object provides information about the spatial and temporal extent of a resource. 
+This JSON object provides information about the spatial and temporal extent of a resource. 
 
 A typical resource type is a collection and the object describes the extent of all items in the collection. 
 
@@ -62,10 +62,6 @@ If no value is provided, the default reference system is the Gregorian calendar 
 !===
 
 Additional properties for other descriptions of the temporal extent may be added.
-
-== Representation: JSON 
-
-The extent is embedded as an object in JSON representations of OGC API resources.
 
 === Example
 

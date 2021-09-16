@@ -7,7 +7,7 @@ The distribution of a geospatial dataset in an API is organized into one or more
 * By semantic type: For example, an airport dataset may be distributed with collections for buildings, taxiways, runways, etc.
 * By spatial clustering: For example, the same airport dataset may be distributed with a collection for each airport or country. 
 
-The OGC Collections resource provides information about and access to the data in each collection of the distribution.
+The OGC Collections JSON resource provides information about and access to the data in each collection of the distribution.
 
 [[properties]]
 == Pre-defined properties
@@ -51,13 +51,9 @@ This link relation type will not be registered with IANA. It will in the future 
 This link relation type will in the future supersede the `data` link relation type.
 !===
 
-== Representation: JSON 
-
-The JSON representation is the currently recommended representation that all APIs should support.
-
 === Examples
 
-.Collections example with a single collection (JSON)
+.Collections example with a single collection
 [%collapsible]
 =================
 [source,JSON]
@@ -244,12 +240,6 @@ ifndef::env-github[]
 include::collections.yaml[]
 ----
 endif::[]
-
-== Representation: HTML 
-
-Providing an HTML representation is recommended so that the resource can be displayed in a web browser and indexed by search engines.
-
-The HTML representation should include all information that is part of the JSON representation.
 
 === Media type
 
