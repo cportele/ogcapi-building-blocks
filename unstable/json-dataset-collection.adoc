@@ -1,0 +1,109 @@
+= Resource: OGC Dataset Collection
+
+Work-in-progress / placeholder
+
+== Overview
+
+This document describes the fields needed for an OGC Collection to describe a 'dataset'. It defines how to use an 
+OGC Collection as a standalone JSON file that provides metadata for a single set of data. The data could be a 
+geopackage, a geojson collection of features, a zipped shapefile, a geotiff, a netcdf, a zarr file, or any number 
+of standard data formats for storing geospatial information. It worksespecially well when combined with cloud-native 
+geospatial formats like zarr, enabling clients to get metadata for the file they're using directly, but it works just 
+as well with formats that aren't as optimized for the cloud.
+
+The OGC Dataset Collection JSON is the metadata needed to fully describe a dataset, such as a feature collection or a multi-dimensional coverage. 
+It is an link:../geo/common/json-collection.adoc[OGC Collection], and uses all the exact same fields, but makes
+more of the fields required and extends it with additional properties.
+
+The Dataset Collection can be mapped into an [OGC Dataset Record](ogc-dataset-record-spec.md), to represent it as 
+GeoJSON (and available in a Features API or Records API)
+
+[[properties]]
+== Pre-defined properties
+
+.Properties
+[cols="20,10a,70a",options="header"]
+!===
+|Property |Type |Description
+|id |string |**REQUIRED**. Unique identifier of the collection. The identifier is used, for example, as a path element in URIs.
+|title |string |**REQUIRED**. The human readable title of the collection.
+|description |string |**REQUIRED**. A free-text description of the resources in the collection. The content may include Markdown and HTML markup.
+|itemType |string |Indicator about the type of the data items in the collection. The items can be accessed by following the `items` link, if provided. The default value is "feature".
+|links |[ link:../../../other/common/schemas/link.adoc[Link] ] |**REQUIRED**. Links to other resources. See <<link-relations>> for typical link relations included in a collection.
+|extent |[ link:../schemas/extent.adoc[Extent] ] |**CONDITIONAL**. The extent of the data in the collection. The property has to be provided, if the data has a spatial or temporal extent.
+|crs |[ URI ] |The list of coordinate reference systems supported by the API for this collection. Each coordinate reference systems is identified by a URI. See <<crs-identifiers>>. At least WGS84 longitude/latitude (with optional ellipsoidal height) has to be supported.
+
+TODO: add more fields
+
+!===
+
+[[link-relations]]
+== Link relation types
+
+
+TODO: link to OGC Collection link section
+
+[[crs-identifiers]]
+== Coordinate reference system (CRS) identifiers
+
+TODO: link to OGC Collection
+
+=== Example
+
+.Collection example (JSON)
+[%collapsible]
+=================
+[source,JSON]
+----
+{
+   "id": "buildings",
+   "title": "Buildings",
+   "description": "Buildings in the city of Bonn.",
+   "itemType": "feature",
+   "extent": {
+      "spatial": {
+         "bbox": [ [ 7.01, 50.63, 7.22, 50.78 ] ]
+      },
+      "temporal": {
+         "interval": [ [ "2010-02-15T12:34:56Z", null ] ]
+      }
+   },
+   "links": [
+      { "href": "https://data.example.org/collections/buildings.json",
+         "rel": "self", "type": "application/json", "title": "This collection" },
+      { "href": "https://data.example.org/collections/buildings.html",
+         "rel": "alternate", "type": "text/html", "title": "This collection as HTML" },
+      { "href": "https://data.example.org/collections/buildings/items",
+         "rel": "items", "type": "application/geo+json",
+         "title": "Buildings" },
+      { "href": "https://data.example.org/collections/buildings/items",
+         "rel": "http://www.opengis.net/def/rel/ogc/1.0/items", "type": "application/geo+json",
+         "title": "Buildings" },
+      { "href": "https://creativecommons.org/publicdomain/zero/1.0/",
+         "rel": "license", "type": "text/html",
+         "title": "CC0-1.0" },
+      { "href": "https://creativecommons.org/publicdomain/zero/1.0/rdf",
+         "rel": "license", "type": "application/rdf+xml",
+         "title": "CC0-1.0" }
+   ]
+}
+----
+=================
+
+=== Media type
+
+`application/json`
+
+=== Schema
+
+TODO: Add a schema
+
+ifdef::env-github[]
+include::schemas/json-dataset-collection.yaml[]
+endif::[]
+ifndef::env-github[]
+[source,YAML]
+----
+include::collection.yaml[]
+----
+endif::[]

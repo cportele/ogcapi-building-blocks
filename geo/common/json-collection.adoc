@@ -4,7 +4,7 @@
 
 An OGC Collection resource is a JSON object that provides information about and access to a geospatial dataset through links to API endpoints and/or files online.
 
-It is often included in an API as one of several link:json-collections.adoc[collections of data]. 
+It is often included in an API as one of several link:json-collections.adoc[collections of data]. But it can also be used as a standalone
 
 
 [[properties]]
