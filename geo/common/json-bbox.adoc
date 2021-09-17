@@ -42,7 +42,7 @@ If the vertical axis is included, the third and the sixth number are the bottom 
 === Schema
 
 ifdef::env-github[]
-include::bbox.yaml[]
+include::schemas/json-bbox.yaml[]
 endif::[]
 ifndef::env-github[]
 [source,YAML]

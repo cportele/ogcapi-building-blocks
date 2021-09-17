@@ -4,34 +4,31 @@ Experimental repository for building blocks from the [OGC API standards](https:/
 
 * `geo` - geospatial building blocks
   * `common` - building blocks applicable to multiple geospatial resource types
-    * `resources` - API resources
-      * [OGC Collections](geo/common/resources/collections.adoc)
-      * [OGC Collection](geo/common/resources/collection.adoc)
+    * `data types` - JSON representations of geospatial concepts
+      * [OGC Collections](geo/common/json-collections.adoc)
+      * [OGC Collection](geo/common/json-collection.adoc)
+      * [Extent](geo/common/json-extent.adoc)
+      * [Bounding Box](geo/common/json-bbox.adoc)
     * `parameters` - HTTP query parameters
-      * [bbox-crs](geo/common/parameters/bbox-crs.adoc)
-      * [bbox](geo/common/parameters/bbox.adoc)
-      * [crs](geo/common/parameters/crs.adoc)
-    * `schemas` - Reusable data types
-      * [Extent](geo/common/schemas/extent.adoc)
-      * [Bounding Box](geo/common/schemas/bbox.adoc)
+      * [bbox-crs](geo/common/parameter-bbox-crs.adoc)
+      * [bbox](geo/common/parameter-bbox.adoc)
+      * [crs](geo/common/parameter-crs.adoc)
     * `headers` - HTTP headers
-      * [Content-Crs](geo/common/headers/content-crs.adoc)
+      * [Content-Crs](geo/common/header-content-crs.adoc)
   * `features`- building blocks applicable to feature resources
     * `resources` - API resources
-      * [Features](geo/features/resources/features.adoc)
-      * [Feature](geo/features/resources/feature.adoc)
-* `other` - building blocks that are not inherently geospatial and could be replaced, e.g. by building blocks specified in an IETF RFC or similar, once available
-  * `common` - building blocks applicable to multiple geospatial resource types
-    * `resources` - API resources
-      * [OGC API Landing Page](other/common/resources/landing-page.adoc)
-      * [OGC Conformance Declaration](other/common/resources/conformance-declaration.adoc)
-    * `parameters` - HTTP query parameters
-      * [datetime](other/common/parameters/datetime.adoc)
-      * [limit](other/common/parameters/limit.adoc)
-    * `schemas` - Reusable data types
-      * [Instant](other/common/schemas/instant.adoc)
-      * [Interval](other/common/schemas/interval.adoc)
-      * [Link](other/common/schemas/link.adoc)
+      * [Features](geo/features/json-features.adoc)
+      * [Feature](geo/features/json-feature.adoc)
+* `ogc-utils` - Utility building blocks that are used in OGC API's but are not inherently geospatial. They were created to ensure consistency within OGC API's where there was not a clear mainstream standard.  They aim to be in line with best practices of the web and could be replaced, e.g. by building blocks specified in an IETF RFC or similar, if and when they are available. API's built with the geo building blocks do not need to use these, but they provide a nice default option that OGC-focused tools will understand.
+  * `data types` - JSON representations of various utilities used in OGC API's
+    * [OGC API Landing Page](ogc-utils/json-landing-page.adoc)
+    * [OGC Conformance Declaration](ogc-utils/json-conformance-declaration.adoc)
+    * [Instant](ogc-utils/json-instant.adoc)
+    * [Interval](ogc-utils/json-interval.adoc)
+    * [Link](ogc-utils/json-link.adoc)
+  * `parameters` - HTTP query parameters
+    * [datetime](ogc-utilities/parameters/datetime.adoc)
+    * [limit](ogc-utilities/parameters/limit.adoc)
 
 Currently only building blocks from [Part 1: Core](http://docs.ogc.org/DRAFTS/17-069r4.html) and [Part 2: Coordinate Reference Systems by Reference](https://docs.ogc.org/DRAFTS/18-058r1.html) of OGC API Features are included.
 

@@ -16,8 +16,8 @@ The OGC Collections JSON resource provides information about and access to the d
 [cols="20,10a,70a",options="header"]
 !===
 |Property |Type |Description
-|links |[ link:../../../other/common/schemas/link.adoc[Link] ] |**REQUIRED**. Links to other resources. See <<link-relations>> for typical link relations included in a collection.
-|collections |[ link:collection.adoc[OGC Collection] ] |**REQUIRED**. The collections with data in this API.
+|links |[ link:../../ogc-utils/json-link.adoc[Link] ] |**REQUIRED**. Links to other resources. See <<link-relations>> for typical link relations included in a collection.
+|collections |[ link:json-collection.adoc[OGC Collection] ] |**REQUIRED**. The collections with data in this API.
 |crs |[ URI ] |A global list of CRS identifiers that are supported by collections in this API.
 !===
 
@@ -232,7 +232,7 @@ The "dc_buildings" collection is only offered in the default CRS (i.e., WGS 84 l
 === Schema
 
 ifdef::env-github[]
-include::collections.yaml[]
+include::schemas/json-collections.yaml[]
 endif::[]
 ifndef::env-github[]
 [source,YAML]

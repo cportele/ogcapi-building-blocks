@@ -26,12 +26,12 @@ If the `bbox-crs` parameter is specified, then the values of the `bbox` paramete
 
 If the value of the `crs` parameter is not one of the supported coordinate reference system identifiers for the resource, the server will respond with a client error.
 
-How the supported coordinate reference systems are specified, depends on the resource type. For example, for a link:../../features/resources/features.adoc[Features resource], the supported coordinate reference systems are listed in the parent link:../resources/collection.adoc[OGC API Collection resource].
+How the supported coordinate reference systems are specified, depends on the resource type. For example, for a link:../features/json-features.adoc[Features resource], the supported coordinate reference systems are listed in the parent link:json-collection.adoc[OGC API Collection resource].
 
 == OpenAPI 3.0 specification
 
 ifdef::env-github[]
-include::bbox-crs.yaml[]
+include::schemas/parameter-bbox-crs.yaml[]
 endif::[]
 ifndef::env-github[]
 [source,YAML]
