@@ -6,7 +6,7 @@ Version: 1.0.1
 
 The `bbox` query parameter provides a simple mechanism for filtering resources based on their location. It selects all resources that intersect a rectangle (map view) or box (including height information).
 
-More advanced spatial filtering is supported using ... #TODO: add link to filter and CQL - or a potential INTERSETCS extension#.
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
 
 == Examples
 
@@ -43,3 +43,7 @@ ifndef::env-github[]
 include::bbox.yaml[]
 ----
 endif::[]
+
+=== Source Reference
+
+http://docs.ogc.org/is/17-069r3/17-069r3.html#_parameter_bbox[OGC API - Features, Part 1, 7.15.3: Parameter bbox]: Requirement 22

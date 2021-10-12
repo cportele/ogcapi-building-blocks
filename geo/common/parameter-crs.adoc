@@ -6,6 +6,8 @@ Version: 1.0.0
 
 The `crs` query parameter can be used to request the coordinate reference system to use for any coordinates included in the response.
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Stable
+
 == Examples
 
 .Bounding box parameter example
@@ -39,3 +41,7 @@ ifndef::env-github[]
 include::bbox-crs.yaml[]
 ----
 endif::[]
+
+=== Source Reference
+
+https://portal.ogc.org/files/91976#_parameter_crs[OGC API - Features, Part 2, 6.3.2: Parameter crs]

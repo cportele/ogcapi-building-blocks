@@ -6,6 +6,8 @@ Version: 1.0.0
 
 The `bbox-crs` query parameter can be used to assert the coordinate reference system that is used for the coordinate values of the link:bbox.adoc[`bbox` parameter].
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Stable
+
 == Examples
 
 .Bounding box parameter example
@@ -35,3 +37,7 @@ ifndef::env-github[]
 include::bbox-crs.yaml[]
 ----
 endif::[]
+
+=== Source Reference
+
+https://portal.ogc.org/files/91976#_parameter_bbox_crs[OGC API - Features, Part 2, 6.3.1: Parameter bbox-crs]

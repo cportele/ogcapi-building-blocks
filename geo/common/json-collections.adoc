@@ -9,6 +9,8 @@ The distribution of a geospatial dataset in an API is organized into one or more
 
 The OGC Collections JSON resource provides information about and access to the data in each collection of the distribution.
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
+
 [[properties]]
 == Pre-defined properties
 
@@ -241,6 +243,6 @@ include::collections.yaml[]
 ----
 endif::[]
 
-=== Media type
+=== Source Reference
 
-`text/html`
+http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_4[OGC API - Features, Part 1, 7.13.2: Feature Collections Response]
