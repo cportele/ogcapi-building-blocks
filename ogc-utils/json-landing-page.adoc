@@ -8,6 +8,8 @@ The OGC API Landing Page provides links to important resources in the API, as a 
 
 The landing page will typically also include essential metadata about the API, for example, a title and a description.
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
+
 [[properties]]
 == Pre-defined properties
 

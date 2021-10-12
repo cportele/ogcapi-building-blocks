@@ -6,7 +6,7 @@ Version: 1.0.1
 
 The `datetime` query parameter provides a simple mechanism for filtering resources based on their temporal extent. It selects all resources that intersect an temporal instant or interval.
 
-More advanced temporal filtering is supported using ... #TODO: add link to filter and CQL#.
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
 
 == Examples
 
