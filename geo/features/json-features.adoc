@@ -10,6 +10,8 @@ This resource supports spatial filtering with the link:../../common/parameters/b
 
 To avoid overloading clients and servers, both clients and servers can limit the maximum number of features in a representation of the resource. In this case, paging is supported to provide access to all the features in the collection that match the specified filter conditions.
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
+
 [[properties]]
 == Pre-defined properties
 
