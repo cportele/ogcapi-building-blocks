@@ -26,14 +26,14 @@ https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Matu
 |license | string|**REQUIRED**. A legal document under which the resource is made available.
 |itemType |string |Indicator about the type of the data items in the collection. 
 |crs |[ URI ] |The list of coordinate reference systems supported by the API for this collection. Each coordinate reference systems is identified by a URI. See <<crs-identifiers>>. At least WGS84 longitude/latitude (with optional ellipsoidal height) has to be supported.
-|keywords |[ string ] |A list of keywords or tag associated with the resource.
-|keywordsCodespace |URI | A reference to a controlled vocabulary used for the keywords property.
-|language |string | This refers to the natural language used for textual values.
-|created |string |The date the dataset was created, formatted according to https://datatracker.ietf.org/doc/html/rfc3339#section-5.6[RFC 3339, section 5.6].
-|updated |string |The more recent date on which the dataset was changed, formatted according to https://datatracker.ietf.org/doc/html/rfc3339#section-5.6[RFC 3339, section 5.6].
-|publisher |publisher |The entity making the resource available. TODO: Describe the publisher object.
-|themes |[ string ] |A knowledge organization system used to classify the resource.
-|contactPoint |[ string ] |An entity to contact about the resource.
+|keywords |[ string ] |A list of keywords, tags, key phrases, or classification codes associated with the collection. Recommended best practice is to use a controlled vocabulary.
+|keywordsCodespace |URI | A reference to a controlled vocabulary used for the keywords property.  If a reference is not provided then the values of the keywords property should be considered a free list of tokens associated with the collection.
+|language |string | This refers to the natural language used for textual values (e.g. titles, descriptions, etc.). ISO 639-1/639-2 codes should be used. TODO: The reference to ISO 639-2 is from Records. Wouldn't it be better to recommend only the two letter codes from ISO 639-1?
+|created |string |The date or date-time the dataset was created, formatted according to https://datatracker.ietf.org/doc/html/rfc3339#section-5.6[RFC 3339, section 5.6].
+|updated |string |The more recent date or date-time on which the dataset was changed, formatted according to https://datatracker.ietf.org/doc/html/rfc3339#section-5.6[RFC 3339, section 5.6].
+|publisher |Party |The entity making the resource available. TODO: Describe the Party object.
+|themes |[ Theme ] |A knowledge organization system used to classify the resource. TODO: describe the Theme object.
+|contactPoint |Party |An entity to contact about the resource. TODO: Describe the Party object.
 |rights |string |A statement that concerns all rights not addressed by the license such as a copyright statement.
 
 !===
