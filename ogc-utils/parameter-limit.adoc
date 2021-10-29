@@ -6,6 +6,8 @@ Version: 1.0.1
 
 The `limit` query parameter provides a mechanism for a client to limit the maximum number of items in a response from an API resource that is some kind of a collection of items.
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
+
 == Examples
 
 The number of resources returned depends on the server and the parameter `limit`.

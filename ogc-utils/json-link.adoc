@@ -6,6 +6,8 @@ Version: 1.0.1
 
 Web linking according to http://tools.ietf.org/rfc/rfc8288.txt[RFC 8288] is used to express relationships between resources. The JSON object representation of links described here is used consistently in OGC API's.
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
+
 [[properties]]
 == Pre-defined properties
 

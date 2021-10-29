@@ -8,6 +8,8 @@ An OGC Conformance Declaration is a JSON object that lists the conformance class
 
 Clients may but are not required to use this information. This resource is intended to support "generic" clients that want to access multiple implementations of OGC API standards - and not "just" a specific API / server. For this purpose, the server can declare the conformance classes it implements and conforms to.
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
+
 [[properties]]
 == Pre-defined properties
 

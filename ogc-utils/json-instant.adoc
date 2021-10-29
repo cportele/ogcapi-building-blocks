@@ -12,6 +12,8 @@ This describes the initial range of instant values. This range may be extended i
 
 An instant is embedded as a string in JSON representations of OGC API resources.
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
+
 === Examples
 
 .Time instant example (date)
