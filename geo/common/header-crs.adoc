@@ -6,6 +6,8 @@ Version: 1.0.0
 
 Because of the inconsistent provision of coordinate reference system (CRS) metadata in geospatial encodings and the continued confusion caused by the axis order of coordinates, this header provides a mechanism for a server to clearly and unambiguously assert the CRS being used in a response document independent of the requested output format.
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Stable
+
 == Examples
 
 .Bounding box parameter example
@@ -53,3 +55,7 @@ ifndef::env-github[]
 include::content-crs.yaml[]
 ----
 endif::[]
+
+=== Source Reference
+
+https://portal.ogc.org/files/91976#_coordinate_system_and_axis_order[OGC API - Features, Part 2, 6.3.3: Coordinate System and axis order]

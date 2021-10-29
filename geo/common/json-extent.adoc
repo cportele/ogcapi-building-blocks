@@ -8,6 +8,8 @@ This JSON object provides information about the spatial and temporal extent of a
 
 A typical resource type is a collection and the object describes the extent of all items in the collection. 
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
+
 == Description
 
 This object provides the axis-aligned extent of a resource. 
@@ -104,3 +106,7 @@ ifndef::env-github[]
 include::extent.yaml[]
 ----
 endif::[]
+
+=== Source Reference
+
+http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_4[OGC API - Features, Part 1, 7.13.2: Feature Collections Response]

@@ -6,6 +6,8 @@ Version: 1.0.1
 
 A feature. Every feature is a sub-resource of an link:../common/json-collection.adoc[OGC Collection].
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
+
 [[properties]]
 == Pre-defined properties
 

@@ -8,6 +8,8 @@ The bounding box JSON object describes a simple spatial extent of a resource. Fo
 
 The bounding box is also useful when displaying a resource in a map to determine the initial map view.
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
+
 == Description
 
 A bounding box is provided as an array of four or six numbers, depending on whether the coordinate reference system includes a vertical axis (height or depth):
@@ -51,6 +53,10 @@ include::bbox.yaml[]
 ----
 endif::[]
 
+=== Source Reference
+
+http://docs.ogc.org/is/17-069r3/17-069r3.html#_parameter_bbox[OGC API - Features, Part 1, 7.15.3: Parameter bbox]: Requirement 23.
+
 == Alternate Representation: Text 
 
 The text representation of a bounding box is based on the JSON representation and represents the array as comma-separated values. 
@@ -64,3 +70,4 @@ The text representation of a bounding box is based on the JSON representation an
 -124.7844079,24.7433195,-66.9513812,49.3457868
 ----
 =================
+

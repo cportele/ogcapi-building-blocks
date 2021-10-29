@@ -4,8 +4,9 @@
 
 An OGC Collection resource is a JSON object that provides information about and access to a geospatial dataset through links to API endpoints and/or files online.
 
-It is often included in an API as one of several link:json-collections.adoc[collections of data]. But it can also be used as a standalone
+It is often included in an API as one of several link:json-collections.adoc[collections of data]. But it can also be used as a standalone file to provide static metadata and links to geospatial data.
 
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
 
 [[properties]]
 == Pre-defined properties
@@ -141,3 +142,8 @@ ifndef::env-github[]
 include::collection.yaml[]
 ----
 endif::[]
+
+=== Source Reference
+
+http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_5[OGC API - Features, Part 1, 7.14.2 Feature collection Response]
+
