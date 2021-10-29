@@ -6,7 +6,7 @@ Work-in-progress / placeholder
 
 An OGC Dataset Collection resource is a JSON object that provides information about and access to a geospatial dataset, such as a feature collection or a multi-dimensional coverage, through links to API endpoints and/or files online. It extends the link:../geo/common/json-collection.adoc[OGC Collection] with additional fields that help describe a dataset, providing the key metadata to enable the crawling and search of geospatial datasets.
 
-The Dataset Collection can be mapped into an [OGC Dataset Record](https://github.com/opengeospatial/ogcapi-records/pull/130), to represent it as 
+The Dataset Collection can be mapped into an https://github.com/opengeospatial/ogcapi-records/pull/130[OGC Dataset Record], to represent it as 
 GeoJSON (and available in a Features API or Records API). (*NOTE* The OGC Dataset Record is still a proposal, once it is cleaned up it will get an unstable building block in this repo as well)
 
 https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Proposal
@@ -26,14 +26,14 @@ https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Matu
 |license | string|**REQUIRED**. A legal document under which the resource is made available.
 |itemType |string |Indicator about the type of the data items in the collection. 
 |crs |[ URI ] |The list of coordinate reference systems supported by the API for this collection. Each coordinate reference systems is identified by a URI. See <<crs-identifiers>>. At least WGS84 longitude/latitude (with optional ellipsoidal height) has to be supported.
-|keywords |[string] |A list of keywords or tag associated with the resource.
+|keywords |[ string ] |A list of keywords or tag associated with the resource.
 |keywordsCodespace |URI | A reference to a controlled vocabulary used for the keywords property.
 |language |string | This refers to the natural language used for textual values.
 |created |string |The date the dataset was created, formatted according to https://datatracker.ietf.org/doc/html/rfc3339#section-5.6[RFC 3339, section 5.6].
 |updated |string |The more recent date on which the dataset was changed, formatted according to https://datatracker.ietf.org/doc/html/rfc3339#section-5.6[RFC 3339, section 5.6].
 |publisher |publisher |The entity making the resource available. TODO: Describe the publisher object.
-|themes |[string] |A knowledge organization system used to classify the resource.
-|contactPoint |[string] An entity to contact about the resource.
+|themes |[ string ] |A knowledge organization system used to classify the resource.
+|contactPoint |[ string ] |An entity to contact about the resource.
 |rights |string |A statement that concerns all rights not addressed by the license such as a copyright statement.
 
 !===
@@ -121,6 +121,7 @@ explanation of how to use the CRS field.
             "length": 1449656320,
             "title": "Data as a Geopackage"
         }
+    ]
 }
 ----
 =================
@@ -139,6 +140,6 @@ endif::[]
 ifndef::env-github[]
 [source,YAML]
 ----
-include::collection.yaml[]
+include::schemas/json-dataset-collection.yaml[]
 ----
 endif::[]
