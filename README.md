@@ -31,8 +31,8 @@ understand.
     * [Interval](ogc-utils/json-interval.adoc)
     * [Link](ogc-utils/json-link.adoc)
   * `parameters` - HTTP query parameters
-    * [datetime](ogc-utilities/parameters/datetime.adoc)
-    * [limit](ogc-utilities/parameters/limit.adoc)
+    * [datetime](ogc-utils/parameter-datetime.adoc)
+    * [limit](ogc-utils/parameter-limit.adoc)
 * `unstable` - These building blocks are not yet stable or mature. They may be extracted from core OGC API standards that have not 
 yet been fully approved, or they may also be new ideas that are not yet in a standard.
   * `data types` - JSON representations of geospatial concepts or utilities that are not yet stable or mature.
