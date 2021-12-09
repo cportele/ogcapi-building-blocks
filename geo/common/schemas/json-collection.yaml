@@ -12,9 +12,9 @@ properties:
   links:
     type: array
     items:
-      $ref: link.yaml
+      $ref: ../../../ogc-utils/schemas/json-link.yaml
   extent:
-    $ref: extent.yaml
+    $ref: json-extent.yaml
   itemType:
     type: string
     default: feature

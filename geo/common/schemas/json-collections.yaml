@@ -6,8 +6,8 @@ properties:
   links:
     type: array
     items:
-      $ref: link.yaml
+      $ref: ../../../ogc-utils/schemas/json-link.yaml
   collections:
     type: array
     items:
-      $ref: collection.yaml
+      $ref: json-collection.yaml

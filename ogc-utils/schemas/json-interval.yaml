@@ -3,5 +3,5 @@ minItems: 2
 maxItems: 2
 items:
   oneOf:
-  - $ref: instant.yaml
+  - $ref: json-instant.yaml
   - null

@@ -34,10 +34,10 @@ endif::[]
 ifndef::env-github[]
 [source,YAML]
 ----
-include::bbox-crs.yaml[]
+include::schemas/parameter-bbox-crs.yaml[]
 ----
 endif::[]
 
 === Source Reference
 
-https://portal.ogc.org/files/91976#_parameter_bbox_crs[OGC API - Features, Part 2, 6.3.1: Parameter bbox-crs]
+http://www.opengis.net/doc/IS/ogcapi-features-2/1.0#_parameter_bbox_crs[OGC API - Features, Part 2, 6.3.1: Parameter bbox-crs]

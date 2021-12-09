@@ -65,12 +65,12 @@ This example is for an API implementing OGC API - Features - Part 1: Core and th
 === Schema
 
 ifdef::env-github[]
-include::conformance-declaration.yaml[]
+include::schemas/json-conformance-declaration.yaml[]
 endif::[]
 ifndef::env-github[]
 [source,YAML]
 ----
-include::conformance-declaration.yaml[]
+include::schemas/json-conformance-declaration.yaml[]
 ----
 endif::[]
 

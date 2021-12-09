@@ -33,15 +33,15 @@ How the supported coordinate reference systems are specified, depends on the res
 == OpenAPI 3.0 specification
 
 ifdef::env-github[]
-include::schemas/parameter-bbox-crs.yaml[]
+include::schemas/parameter-crs.yaml[]
 endif::[]
 ifndef::env-github[]
 [source,YAML]
 ----
-include::bbox-crs.yaml[]
+include::schemas/parameter-crs.yaml[]
 ----
 endif::[]
 
 === Source Reference
 
-https://portal.ogc.org/files/91976#_parameter_crs[OGC API - Features, Part 2, 6.3.2: Parameter crs]
+http://www.opengis.net/doc/IS/ogcapi-features-2/1.0#_parameter_crs[OGC API - Features, Part 2, 6.3.2: Parameter crs]

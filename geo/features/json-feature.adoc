@@ -113,7 +113,7 @@ endif::[]
 ifndef::env-github[]
 [source,YAML]
 ----
-include::feature.yaml[]
+include::schemas/json-feature.yaml[]
 ----
 endif::[]
 
@@ -126,3 +126,8 @@ The HTML representation should include all information that is part of the JSON 
 === Media type
 
 `text/html`
+
+== Source References
+
+* http://www.opengis.net/doc/IS/ogcapi-features-1/1.0#_response_7[OGC API - Features, Part 1, 7.16.2: Feature response]
+* http://www.opengis.net/doc/IS/ogcapi-features-1/1.0#_requirements_class_geojson[OGC API - Features, Part 1, 8.3: GeoJSON]

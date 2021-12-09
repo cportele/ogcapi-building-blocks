@@ -47,15 +47,15 @@ CRS-value = "<" URI-reference ">"
 == OpenAPI 3.0 specification
 
 ifdef::env-github[]
-include::schemas/header-crs.yaml[]
+include::schemas/header-content-crs.yaml[]
 endif::[]
 ifndef::env-github[]
 [source,YAML]
 ----
-include::content-crs.yaml[]
+include::schemas/header-content-crs.yaml[]
 ----
 endif::[]
 
 === Source Reference
 
-https://portal.ogc.org/files/91976#_coordinate_system_and_axis_order[OGC API - Features, Part 2, 6.3.3: Coordinate System and axis order]
+http://www.opengis.net/doc/IS/ogcapi-features-2/1.0#_coordinate_reference_system_information_independent_of_the_feature_encoding[OGC API - Features, Part 2, 6.3.4: Coordinate reference system information independent of the feature encoding]

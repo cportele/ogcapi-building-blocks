@@ -40,10 +40,10 @@ endif::[]
 ifndef::env-github[]
 [source,YAML]
 ----
-include::bbox.yaml[]
+include::schemas/parameter-bbox.yaml[]
 ----
 endif::[]
 
 === Source Reference
 
-http://docs.ogc.org/is/17-069r3/17-069r3.html#_parameter_bbox[OGC API - Features, Part 1, 7.15.3: Parameter bbox]: Requirement 22
+http://www.opengis.net/doc/IS/ogcapi-features-1/1.0#_parameter_bbox[OGC API - Features, Part 1, 7.15.3: Parameter bbox]

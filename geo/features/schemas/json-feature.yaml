@@ -5,4 +5,4 @@ allOf:
       links:
         type: array
         items:
-          $ref: ../../../other/common/schemas/link.yaml
+          $ref: ../../../ogc-utils/schemas/json-link.yaml

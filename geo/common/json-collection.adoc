@@ -139,11 +139,11 @@ endif::[]
 ifndef::env-github[]
 [source,YAML]
 ----
-include::collection.yaml[]
+include::schemas/json-collection.yaml[]
 ----
 endif::[]
 
 === Source Reference
 
-http://docs.ogc.org/is/17-069r3/17-069r3.html#_response_5[OGC API - Features, Part 1, 7.14.2 Feature collection Response]
+http://www.opengis.net/doc/IS/ogcapi-features-1/1.0#_response_5[OGC API - Features, Part 1, 7.14.2 Feature collection Response]
 

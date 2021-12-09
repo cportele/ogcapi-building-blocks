@@ -38,7 +38,7 @@ yet been fully approved, or they may also be new ideas that are not yet in a sta
   * `data types` - JSON representations of geospatial concepts or utilities that are not yet stable or mature.
     * [Dataset Collection](unstable/json-dataset-collection.adoc)
 
-Currently only building blocks from [Part 1: Core](http://docs.ogc.org/DRAFTS/17-069r4.html) and [Part 2: Coordinate Reference Systems by Reference](https://docs.ogc.org/DRAFTS/18-058r1.html) of OGC API Features are included.
+Currently only building blocks from [Part 1: Core](https://docs.ogc.org/DRAFTS/17-069r4.html) and [Part 2: Coordinate Reference Systems by Reference](https://docs.ogc.org/DRAFTS/18-058r1.html) of OGC API Features are included.
 
 **Warning:** This is a work-in-progress.
 
