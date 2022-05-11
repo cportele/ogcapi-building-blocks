@@ -6,9 +6,11 @@ Version: 1.0.1
 
 The features in an link:../common/json-collection.adoc[OGC Collection].
 
-This resource supports spatial filtering with the link:../../common/parameters/bbox.adoc[`bbox` parameter], temporal filtering with the link:../common/parameters-datetime.adoc[`datetime` parameter].
+This resource supports spatial filtering with the link:../../common/parameters/bbox.adoc[`bbox` parameter], temporal filtering with the link:../common/parameters-datetime.adoc[`datetime` parameter]. In addition, the resource may also support more complex filters using the link:../../common/parameters/filter.adoc[`filter` parameter].
 
 To avoid overloading clients and servers, both clients and servers can limit the maximum number of features in a representation of the resource. In this case, paging is supported to provide access to all the features in the collection that match the specified filter conditions.
+
+APIs that support coordinates in coordinate reference systems other than https://en.wikipedia.org/wiki/World_Geodetic_System#WGS84[World Geodetic System 1984] may also support the link:../../common/parameters/crs.adoc[`crs` parameter] to request that the geometries in a representation of the resource are in a specific coordinate reference system.
 
 https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Mature
 
