@@ -1,0 +1,51 @@
+= Parameter: filter-lang
+
+Version: 1.0.0-rc.1
+
+== Overview
+
+The `filter-lang` query parameter can be used to assert the filter expression language that is used in the link:parameter-filter.adoc[`filter` parameter].
+
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Candidate
+
+== Examples
+
+.Filter expression language parameter example
+=================
+The following filter expression `S_INTERSECTS(geometry,ENVELOPE(7.0106,49.9113,7.0419,49.9326))` is in the filter expression language link:cql2.adoc[CQL2-Text]. 
+
+[source,TEXT]
+----
+...
+&filter=S_INTERSECTS(geometry%2CENVELOPE(7.0106%2C49.9113%2C7.0419%2C49.9326))
+&filter-lang=cql2-text
+----
+=================
+
+https://demo.ldproxy.net/vineyards/collections/vineyards/items?filter=S_INTERSECTS(geometry%2CENVELOPE(7.0106%2C49.9113%2C7.0419%2C49.9326))&filter-lang=cql2-text[Live link]
+
+== Description
+
+`filter-lang` is a query parameter that may be applied in GET requests on a resource that also accepts the `filter` parameter.
+
+If the `filter-lang` parameter is specified, then the filter expression in the `filter` parameter is assumed to be in the specified filter expression language and the server will process the expression and properly fetch data that meets the expression. 
+
+The API definition will identify all supported filter expression languages and also identify the default filter encoding that the API will assume, if a `filter` parameter is provided, but no `filter-lang` parameter. 
+
+Support for the filter expression language link:cql2.adoc[CQL2-Text] with the value `cql2-text` is recommended.
+
+== OpenAPI 3.0 specification
+
+ifdef::env-github[]
+include::schemas/parameter-filter-lang.yaml[]
+endif::[]
+ifndef::env-github[]
+[source,YAML]
+----
+include::schemas/parameter-filter-lang.yaml[]
+----
+endif::[]
+
+=== Source Reference
+
+https://docs.ogc.org/DRAFTS/19-079r1.html#filter-lang-param[OGC API - Features, Part 3, 6.4: Parameter filter-lang]
