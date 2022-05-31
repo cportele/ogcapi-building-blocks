@@ -7,12 +7,16 @@ Experimental repository for building blocks from the [OGC API standards](https:/
     * `data types` - JSON representations of geospatial concepts
       * [OGC Collections](geo/common/json-collections.adoc)
       * [OGC Collection](geo/common/json-collection.adoc)
+      * [OGC Common Query Language (CQL2)](geo/common/cql2.adoc)
       * [Extent](geo/common/json-extent.adoc)
       * [Bounding Box](geo/common/json-bbox.adoc)
     * `parameters` - HTTP query parameters
       * [bbox-crs](geo/common/parameter-bbox-crs.adoc)
       * [bbox](geo/common/parameter-bbox.adoc)
       * [crs](geo/common/parameter-crs.adoc)
+      * [filter](geo/common/parameter-filter.adoc)
+      * [filter-crs](geo/common/parameter-filter-crs.adoc)
+      * [filter-lang](geo/common/parameter-filter-lang.adoc)
     * `headers` - HTTP headers
       * [Content-Crs](geo/common/header-content-crs.adoc)
   * `features`- building blocks applicable to feature resources
@@ -27,9 +31,11 @@ understand.
   * `data types` - JSON representations of various utilities used in OGC API's
     * [OGC API Landing Page](ogc-utils/json-landing-page.adoc)
     * [OGC Conformance Declaration](ogc-utils/json-conformance-declaration.adoc)
+    * [Functions](ogc-utils/json-functions.adoc)
     * [Instant](ogc-utils/json-instant.adoc)
     * [Interval](ogc-utils/json-interval.adoc)
     * [Link](ogc-utils/json-link.adoc)
+    * [Queryables](ogc-utils/json-queryables.adoc)
   * `parameters` - HTTP query parameters
     * [datetime](ogc-utils/parameter-datetime.adoc)
     * [limit](ogc-utils/parameter-limit.adoc)

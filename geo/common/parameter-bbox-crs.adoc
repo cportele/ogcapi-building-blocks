@@ -1,10 +1,10 @@
 = Parameter: bbox-crs
 
-Version: 1.0.0
+Version: 1.0.1
 
 == Overview
 
-The `bbox-crs` query parameter can be used to assert the coordinate reference system that is used for the coordinate values of the link:bbox.adoc[`bbox` parameter].
+The `bbox-crs` query parameter can be used to assert the coordinate reference system that is used for the coordinate values of the link:parameter-bbox.adoc[`bbox` parameter].
 
 https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Stable
 
@@ -12,15 +12,18 @@ https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Matu
 
 .Bounding box parameter example
 =================
-The coordinates in the following bounding box are in the coordinate reference system ETRS89 / UTM zone 32N that is used, for example, in Germany. 
+The coordinates in the bounding box `358000,5530000,360000,5532000` are in the coordinate reference system ETRS89 / UTM zone 32N that is used, for example, in Germany. This bounding box includes the village Lieser.
 
 [source,TEXT]
 ----
 ...
-&bbox=32507317,5224265,33427450,5603836
+&bbox=358000%2C5530000%2C360000%2C5532000
 &bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F25832
 ----
 =================
+
+https://demo.ldproxy.net/vineyards/collections/vineyards/items?bbox=358000%2C5530000%2C360000%2C5532000&bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F25832[Live link]
+
 
 == Description
 

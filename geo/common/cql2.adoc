@@ -1,0 +1,79 @@
+= OGC Common Query Language (CQL2)
+
+Version: 1.0.0-rc.1
+
+== Overview
+
+A fundamental operation performed on a collection of resources is that of filtering in order to obtain a subset of the data that satisfies some filtering criteria. The OGC Common Query Language (CQL2) is a language to express filter expressions. CQL2 expressions are similar to SQL expressions and also support spatial, temporal and array predicates.
+
+== Examples
+
+The following are examples of CQL2 Text filter expressions:
+
+[source,TEXT]
+----
+address.LocalityName = 'Bonn' AND measuredHeight > 10
+
+storeysAboveGround <= 4
+
+creationDate > '2017-12-31'
+
+creationDate < '2018-01-01'
+
+creationDate >= '2018-01-01' AND creationDate <= '2018-12-31'
+
+name LIKE '%Church%'
+
+measuredHeight BETWEEN 10 AND 20
+
+address.LocalityName IN ('Bonn', 'New York', 'Tokyo')
+
+address.LocalityName NOT IN ('Bonn', 'New York', 'Tokyo')
+
+name IS NULL
+
+name IS NOT NULL
+
+S_INTERSECTS(geometry, POLYGON((8 52, 9 52, 9 53, 8 53, 8 52)))
+
+T_AFTER(creationDate, DATE('2018-01-01'))
+
+T_BEFORE(creationDate, DATE('2018-01-01'))
+
+T_INTERSECTS(creationDate, INTERVAL('2018-01-01','2018-12-31'))
+
+T_INTERSECTS(INTERVAL(begin,end), INTERVAL('2018-01-01','2018-12-31'))
+----
+
+== Description
+
+CQL2 is a generic filter grammar that can be used to specify how resource instances in a source collection of any item type, including features, can be filtered to identify a results set. Typically, CQL2 is used in query operations to identify the subset of resources, such as features, that should be included in a response document. See, for example, the link:parameter-filter.adoc[`filter` parameter]. However, CQL2 can also be used in other operations, such as updates, to identify the subset of resources that should be affected by an operation.
+
+Each resource instance in the source collection is evaluated against a filtering expression. The filter expression always evaluates to true, false or null. If the expression evaluates to true, the resource instance satisfies the expression and is marked as being in the result set. If the overall filter expression evaluates to false or null, the data instance is not in the result set. Thus, the net effect of evaluating a filter expression is a set of resources that satisfy the predicates in the expression.
+
+The following list provides an overview of the capabilities supported by CQL2:
+
+* Logical operators (`AND`, `OR`, `NOT`);
+* Simple comparison predicates (`=`, `<>`, `<`, `>`, `<=`, `>=`, `IS NULL`);
+* Advanced comparison operators (`LIKE`, `BETWEEN`, `IN`);
+* Spatial operators (the standard https://en.wikipedia.org/wiki/DE-9IM#Spatial_predicates[named spatial predicates] from the [OGC Simple Feature Access standard]; `S_INTERSECTS`, `S_WITHIN`, `S_EQUALS`, etc.);
+* Temporal operators (mainly temporal predicates based on the https://www.w3.org/TR/owl-time/#topology[topological temporal relations in the W3C/OGC Time Ontology]; `T_AFTER`, `T_BEFORE`, `T_INTERSECTS`, etc.);
+* Array operators (predicates to compare two collections of values, mainly for properties with multiple values; `A_EQUALS`, `A_CONTAINS`, `A_CONTAINEDBY`, `A_OVERLAPS`);
+* A case-folding string operator to support case-insensitive comparisons (`CASEI`);
+* A Unicode-normalization string operator to support accent-insensitive comparisons (`ACCENTI`);
+* Custom functions;
+* Arithmetic expressions.
+
+Two representations of CQL2 filter expressions are available: a text encoding and a JSON encoding. 
+
+The CQL2 text encoding (CQL2-Text) is specified as an https://en.wikipedia.org/wiki/Augmented_Backus%E2%80%93Naur_form[Augmented Backus–Naur form (ABNF)] grammar. This encoding is easy to type for a human and more readable in a URI, but harder to parse.
+
+The CQL2 JSON encoding (CQL2-JSON) is derived from the ABNF grammar and formalized as a JSON Schema. This encoding is harder to type for a human, but easier to parse. It is better for mixing with other JSON content, e.g. in request payloads.
+
+NOTE: The Common Query Language and its text encoding are not new. The Common Query Language with the acronym CQL was originally created as a text encoding based on the capabilities defined in the OGC Filter Encoding standard for use in the OGC Catalogue Service standard. CQL2 is a revision of this earlier version. While the language design including the classification of operators are consistent with the earlier specification, there have been a number of changes and existing implementations of CQL will need to be updated to process filter expressions specified by this document. CQL2 is therefore used as the acronym for the current version of the OGC Common Query Language.
+
+=== Source Reference
+
+* https://docs.ogc.org/DRAFTS/21-065.html[OGC Common Query Language (CQL2)]
+* https://docs.ogc.org/DRAFTS/21-065.html#cql2-bnf[CQL2-Text ABNF grammar]
+* https://docs.ogc.org/DRAFTS/21-065.html#cql2-json-schema[CQL2-JSON schema]

@@ -1,0 +1,51 @@
+= Parameter: filter-crs
+
+Version: 1.0.0-rc.1
+
+== Overview
+
+The `filter-crs` query parameter can be used to assert the coordinate reference system that is used for the coordinate values of the link:parameter-filter.adoc[`filter` parameter].
+
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Candidate
+
+== Examples
+
+.Bounding box parameter example
+=================
+The coordinates in the following CQL2-Text filter expression `S_INTERSECTS(geometry,ENVELOPE(358000,5530000,360000,5532000))` are in the coordinate reference system ETRS89 / UTM zone 32N that is used, for example, in Germany. This bounding box includes the village Lieser, Germany.
+
+[source,TEXT]
+----
+...
+&filter=S_INTERSECTS(geometry%2CENVELOPE(358000%2C5530000%2C360000%2C5532000))
+&filter-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F25832
+----
+=================
+
+https://demo.ldproxy.net/vineyards/collections/vineyards/items?filter=S_INTERSECTS(geometry%2CENVELOPE(358000%2C5530000%2C360000%2C5532000))&filter-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F25832[Live link]
+
+== Description
+
+`filter-crs` is a query parameter that may be applied in GET requests on a resource that also accepts the `filter` parameter.
+
+For reasons discussed in the https://www.w3.org/TR/sdw-bp/[W3C/OGC Spatial Data on the Web Best Practices], by default all coordinates in the `filter` parameter are assumed to be in the default coordinate reference systems WGS 84 longitude and latitude (http://www.opengis.net/def/crs/OGC/1.3/CRS84) for 2D coordinates and WGS 84 longitude, latitude and ellipsoidal height in meters (http://www.opengis.net/def/crs/OGC/0/CRS84h) for 3D coordinates. This default can be overridden using the `filter-crs` parameter.
+
+The `filter-crs` parameter has no use, if the API does not support additional coordinate reference systems beyond WGS 84.
+
+If the `filter-crs` parameter is specified, then any coordinates in the `filter` parameter are assumed to be in the specified coordinate reference system and the server will perform the necessary internal transformations to properly fetch data that meets the specified spatial predicates.
+
+== OpenAPI 3.0 specification
+
+ifdef::env-github[]
+include::schemas/parameter-filter-crs.yaml[]
+endif::[]
+ifndef::env-github[]
+[source,YAML]
+----
+include::schemas/parameter-filter-crs.yaml[]
+----
+endif::[]
+
+=== Source Reference
+
+https://docs.ogc.org/DRAFTS/19-079r1.html#filter-crs-param[OGC API - Features, Part 3, 6.5: Parameter filter-crs]

@@ -1,0 +1,53 @@
+= Parameter: filter
+
+Version: 1.0.1-rc.1
+
+== Overview
+
+The `filter` query parameter provides a mechanism for filtering resources using a filter expression in a filter expression language. 
+
+The filter expression is applied when retrieving resources. Only resources that meet the filter expression are included in the result set.
+
+https://github.com/cportele/ogcapi-building-blocks#building-block-maturity[*Maturity*]: Candidate
+
+== Examples
+
+.Filter parameter example
+=================
+The CQL2-Text filter expression `S_INTERSECTS(geometry,ENVELOPE(7.0106,49.9113,7.0419,49.9326)) AND name LIKE '%lay'` selects all resources in a small bounding box and where the property 'name' ends with 'lay'.
+
+[source,TEXT]
+----
+filter=S_INTERSECTS%28geometry%2CENVELOPE%287.0106%2C49.9113%2C7.0419%2C49.9326%29%29+AND+name+LIKE+%27%25lay%27
+----
+=================
+
+https://demo.ldproxy.net/vineyards/collections/vineyards/items?filter=S_INTERSECTS%28geometry%2CENVELOPE%287.0106%2C49.9113%2C7.0419%2C49.9326%29%29+AND+name+LIKE+%27%25lay%27[Live link]
+
+== Description
+
+`filter` is a query parameter that may be applied in GET requests on a collection of resources.
+
+The parameter, if provided, selects the resources that meet the specified filter expression.
+
+Every filter expression is in a filter expression language. The language used for a specific filter is specified by the link:parameter-filter-lang.adoc[query parameter `filter-lang`]. Support for the filter expression language link:cql2.adoc[CQL2-Text] with the value `cql2-text` is recommended.
+
+All property references used in the filter expression should be declared as link:../../ogc-utils/json-queryables.adoc[queryables] of the resource collection.
+
+All functions used in the filter expression should be link:../../ogc-utils/json-functions.adoc[declared].
+
+== OpenAPI 3.0 specification
+
+ifdef::env-github[]
+include::schemas/parameter-filter.yaml[]
+endif::[]
+ifndef::env-github[]
+[source,YAML]
+----
+include::schemas/parameter-filter.yaml[]
+----
+endif::[]
+
+=== Source Reference
+
+https://docs.ogc.org/DRAFTS/19-079r1.html#filter-param[OGC API - Features, Part 3, 6.3: Parameter filter]

@@ -1,5 +1,7 @@
 = Resource: OGC Collections
 
+Version: 1.0.1
+
 == Overview
 
 The distribution of a geospatial dataset in an API is organized into one or more collections of data. How the data is split into collections in a distribution depends on the intended use of the data. Two common approaches for organizing the data are: 

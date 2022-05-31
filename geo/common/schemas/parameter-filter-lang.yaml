@@ -1,0 +1,12 @@
+name: filter-lang
+in: query
+required: false
+schema:
+  type: string
+  # The enum array lists the filter encodings that the API supports for the resource. The values here are examples and can be changed.
+  enum:
+     - 'cql2-text'
+     - 'cql2-json'
+  # The default value identifies the filter encoding that the API will assume, if a filter is provided, but no filter-lang parameter. The value is an example and can be changed.
+  default: 'cql2-text'
+style: form
